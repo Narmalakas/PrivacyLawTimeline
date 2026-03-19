@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>History of Data Privacy</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="Design.css">
+</head>
+<body>
+
+<!-- SIDEBAR -->
+<aside id="sidebar">
+    <div class="sidebar-logo" onclick="showPage('home')">
+        <div class="logo-icon">
+            <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <div class="logo-text">History of<br><span>Data Privacy</span></div>
+    </div>
+
+    <div class="sidebar-scroll">
+        <div>
+            <div class="nav-section-label">
+                <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                Timeline
+            </div>
+            <div class="timeline-line-wrap">
+                <div class="timeline-line"></div>
+                <div id="timeline-nav"></div>
+            </div>
+        </div>
+
+        <div>
+            <div class="nav-section-label">
+                <svg viewBox="0 0 24 24"><path d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg>
+                The Future
+            </div>
+            <div class="nav-card-btn" id="nav-whats-next" onclick="showPage('whats-next')">
+                <span>What's Next in Privacy?</span>
+                <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
+            </div>
+        </div>
+
+        <div>
+            <div class="nav-section-label">
+                <svg viewBox="0 0 24 24"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg>
+                Quiz
+            </div>
+            <div class="nav-card-btn" id="nav-quiz" onclick="showPage('quiz')">
+                <span>Take the Quiz</span>
+                <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
+            </div>
+        </div>
+
+        <div>
+            <div class="nav-section-label">
+                <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
+                About
+            </div>
+            <div class="nav-card-btn" id="nav-about" onclick="showPage('about')">
+                <span>About Us</span>
+                <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
+            </div>
+        </div>
+    </div>
+</aside>
+
+<!-- MOBILE HEADER -->
+<header id="mobile-header">
+    <div class="logo-row" onclick="showPage('home'); closeMobileMenu()">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#c9a84c" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        <span>Data <b>Privacy</b></span>
+    </div>
+    <button id="hamburger" onclick="toggleMobileMenu()" aria-label="Menu">
+        <svg id="icon-menu" viewBox="0 0 24 24"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        <svg id="icon-close" viewBox="0 0 24 24" style="display:none"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
+</header>
+
+<!-- MOBILE MENU -->
+<nav id="mobile-menu">
+    <div class="mobile-section-label">Timeline</div>
+    <div id="mobile-timeline-nav"></div>
+    <div class="mobile-section-label" style="margin-top:20px;">More</div>
+    <div class="mobile-nav-btn" id="mnav-whats-next" onclick="showPage('whats-next');closeMobileMenu()">
+        <svg viewBox="0 0 24 24"><path d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg>
+        What's Next in Privacy?
+    </div>
+    <div class="mobile-nav-btn" id="mnav-quiz" onclick="showPage('quiz');closeMobileMenu()">
+        <svg viewBox="0 0 24 24"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg>
+        Take the Quiz
+    </div>
+    <div class="mobile-nav-btn" id="mnav-about" onclick="showPage('about');closeMobileMenu()">
+        <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
+        About Us
+    </div>
+</nav>
+
+<!-- MAIN CONTENT -->
+<main id="main">
+
+    <!-- HOME PAGE -->
+    <div id="page-home" class="page active">
+        <div class="home-hero">
+            <div class="hero-bg-grid"></div>
+            <div class="hero-badge">
+                <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                Interactive Timeline
+            </div>
+            <h1 class="hero-title">The Evolution of<br><span class="gold">Data Privacy</span></h1>
+            <p class="hero-sub">From the conceptual birth of the "right to be let alone" in 1890 to the complex global frameworks of today. Explore the pivotal moments that shaped how our personal information is protected.</p>
+            <div class="hero-actions">
+                <button class="btn-primary" onclick="showMilestone(0)">
+                    Start the Journey
+                    <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                </button>
+                <button class="btn-ghost" onclick="showPage('whats-next')">Skip to the Future</button>
+            </div>
+        </div>
+        <div class="timeline-strip">
+            <div class="strip-label">Timeline Overview</div>
+            <div class="timeline-dots" id="timeline-dots"></div>
+        </div>
+    </div>
+
+    <!-- MILESTONE PAGES (generated by JS) -->
+    <div id="milestone-pages"></div>
+
+    <!-- WHAT'S NEXT PAGE -->
+    <div id="page-whats-next" class="page">
+        <div class="wn-hero">
+            <button class="back-link" onclick="showPage('home')">
+                <svg viewBox="0 0 24 24"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+                Back to Timeline
+            </button>
+            <div class="wn-badge">Beyond 2024</div>
+            <h1 class="wn-h1">What's Next in<br><span class="grad">Data Privacy?</span></h1>
+            <p class="wn-sub">As technology accelerates, the landscape of data protection must evolve. Explore the predicted trends that will define the next era of digital rights.</p>
+        </div>
+        <div class="trends-grid" id="trends-grid"></div>
+    </div>
+
+    <!-- QUIZ PAGE -->
+    <div id="page-quiz" class="page">
+        <div class="quiz-wrap">
+            <div class="page-badge">
+                <svg viewBox="0 0 24 24"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg>
+                Knowledge Check
+            </div>
+            <h1 class="page-h1">Privacy Law <span class="gold">Timeline Quiz</span></h1>
+            <p class="page-sub">Test your knowledge of data privacy history. Select an answer for each question, then submit to see your score.</p>
+
+            <div id="score-banner" style="display:none"></div>
+            <div class="quiz-list" id="quiz-list"></div>
+
+            <div class="quiz-submit-row" id="submit-row">
+                <button class="btn-submit" id="submit-btn" onclick="submitQuiz()" disabled>
+                    Submit Answers (<span id="answered-count">0</span>/10)
+                </button>
+                <span class="submit-hint">You can also click "Show Answer" on each question to peek.</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- ABOUT US PAGE -->
+    <div id="page-about" class="page">
+        <div class="about-wrap">
+            <div>
+                <div class="page-badge">
+                    <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
+                    The Team
+                </div>
+                <h1 class="page-h1">About <span class="gold">Us</span></h1>
+                <p class="page-sub">This project was created as an educational exploration of the history and future of data privacy law.</p>
+            </div>
+
+            <div class="info-card">
+                <div class="info-card-header">
+                    <div class="info-icon">
+                        <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
+                    </div>
+                    <h2>Members</h2>
+                </div>
+                <div class="member-row">
+                    <div class="member-avatar">JD</div>
+                    <div class="member-name">Dinauto, Jonah</div>
+                    <div class="member-num">#01</div>
+                </div>
+                <div class="member-row">
+                    <div class="member-avatar">LE</div>
+                    <div class="member-name">Elcamel, Lloyd</div>
+                    <div class="member-num">#02</div>
+                </div>
+                <div class="member-row">
+                    <div class="member-avatar">BE</div>
+                    <div class="member-name">Elnar, Benedict</div>
+                    <div class="member-num">#03</div>
+                </div>
+                <div class="member-row">
+                    <div class="member-avatar">CM</div>
+                    <div class="member-name">Martinez, Cedrick</div>
+                    <div class="member-num">#04</div>
+                </div>
+            </div>
+
+            <div class="info-card">
+                <div class="info-card-header">
+                    <div class="info-icon">
+                        <svg viewBox="0 0 24 24"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+                    </div>
+                    <h2>Year &amp; Section</h2>
+                </div>
+                <div class="section-info">
+                    <div class="section-icon-big">
+                        <svg viewBox="0 0 24 24"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+                    </div>
+                    <div>
+                        <div class="section-name">BTVTED ICT CP 3D</div>
+                        <div class="section-desc">Bachelor of Technical Vocational Teacher Education, —<br>Information and Communication Technology</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="info-card">
+                <div class="info-card-header">
+                    <div class="info-icon">
+                        <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                    </div>
+                    <h2>Contact</h2>
+                </div>
+                <div class="contact-list">
+                    <a class="contact-row" href="mailto:Iloveyousomuchxd123@gmail.com">
+                        <div class="contact-icon">
+                            <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                        </div>
+                        <div>
+                            <div class="contact-label">Email</div>
+                            <div class="contact-value">Iloveyousomuchxd123@gmail.com</div>
+                        </div>
+                    </a>
+                    <a class="contact-row" href="tel:+63569127137">
+                        <div class="contact-icon">
+                            <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.7A2 2 0 012.18 1h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.91 8.4a16 16 0 006.29 6.29l1.76-1.32a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+                        </div>
+                        <div>
+                            <div class="contact-label">Phone</div>
+                            <div class="contact-value">+63 569 127 137</div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</main>
+<script src="Function.js"></script>
+</body>
+</html>
